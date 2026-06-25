@@ -35,7 +35,7 @@ jobs:
         id: meta-backend
         uses: docker/metadata-action@v5
         with:
-          images: ${{ secrets.DOCKERHUB_NAMESPACE }}/tradingagents-backend
+          images: ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.DOCKERHUB_NAMESPACE }}/tradingagents-backend
           tags: |
             type=ref,event=tag
             type=raw,value=latest
@@ -58,7 +58,7 @@ jobs:
         id: meta-frontend
         uses: docker/metadata-action@v5
         with:
-          images: ${{ secrets.DOCKERHUB_NAMESPACE }}/tradingagents-frontend
+          images: ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.DOCKERHUB_NAMESPACE }}/tradingagents-frontend
           tags: |
             type=ref,event=tag
             type=raw,value=latest
